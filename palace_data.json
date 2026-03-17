@@ -1,0 +1,371 @@
+{
+  "palace_info": {
+    "name": "Palace of Culture",
+    "official_name": "Palatul Culturii",
+    "description": "The Palace of Culture in Iași is an emblematic building, built 1906-1925. This iconic structure houses museums dedicated to Moldavian heritage.",
+    "location": "Boulevard Ștefan cel Mare și Sfânt 1, 700028 Iași, Romania",
+    "built_years": "1906-1925",
+    "opening_year": 1925,
+    "architects": ["Ion D. Berindey", "Alexandru D. Xenopol", "Grigore Cerchez"],
+    "architectural_styles": ["Neogothic", "Neoclassical"],
+    "height_meters": 55,
+    "opening_hours": {
+      "monday": "Closed",
+      "tuesday": "Closed",
+      "wednesday": "10:00 - 17:00",
+      "thursday": "10:00 - 17:00",
+      "friday": "10:00 - 17:00",
+      "saturday": "10:00 - 17:00",
+      "sunday": "10:00 - 17:00"
+    },
+    "closed_days": "Monday, Tuesday",
+    "phone": "+40 232 275 979",
+    "website": "www.palatulculturii.ro"
+  },
+  "floors": [
+    {
+      "floor_number": 0,
+      "floor_name": "Ground Floor",
+      "floor_name_romanian": "Parter",
+      "wings": ["West Wing", "East Wing"],
+      "description": "Main entrance area with museums situated in the west and east wings",
+      "rooms": [
+        {
+          "id": "history_museum",
+          "name": "History Museum of Moldavia",
+          "name_romanian": "Muzeul de Istorie a Moldovei",
+          "type": "museum",
+          "description": "Comprehensive exhibition of Moldavian cultural heritage including traditional costumes, artifacts, and historical documents from medieval times to modern era. Located on the ground floor in the west wing.",
+          "wing": "West Wing",
+          "accessibility": "fully_accessible",
+          "highlights": ["Medieval manuscripts", "Traditional costumes", "Historical weapons", "Religious artifacts"],
+          "floor": 0
+        },
+        {
+          "id": "stefan_procopiu",
+          "name": "Ștefan Procopiu Science and Technique Museum",
+          "name_romanian": "Muzeul Știintei și Tehnicii \"Ștefan Procopiu\"",
+          "type": "museum",
+          "description": "Interactive science museum showcasing historical scientific instruments, inventions, and displays about physics, chemistry, and technology. Located on the ground floor in the east wing.",
+          "wing": "East Wing",
+          "accessibility": "fully_accessible",
+          "highlights": ["Scientific instruments", "Technology exhibits", "Interactive displays"],
+          "floor": 0
+        }
+      ]
+    },
+    {
+      "floor_number": 1,
+      "floor_name": "First Floor",
+      "floor_name_romanian": "Etaj 1",
+      "description": "Primary museum spaces and representative halls dedicated to Moldavian history, art, and heritage",
+      "rooms": [
+        {
+          "id": "art_museum",
+          "name": "Art Museum",
+          "name_romanian": "Muzeul de Artă",
+          "type": "museum",
+          "description": "Collection of Romanian and Moldavian paintings from 19th and 20th centuries, featuring renowned artists and contemporary works. Located mainly on the first floor with galleries and exhibition rooms.",
+          "accessibility": "fully_accessible",
+          "highlights": ["Traditional portraiture", "Landscape paintings", "Contemporary art"],
+          "floor": 1
+        },
+        {
+          "id": "ethnographic_museum_1",
+          "name": "Ethnographic Museum of Moldavia",
+          "name_romanian": "Muzeul Etnografic al Moldovei",
+          "type": "museum",
+          "description": "Dedicated to traditional Moldavian life, crafts, and customs. Features authentic textiles, pottery, tools, and household items from various regions of Moldavia. Covers rooms on the first floor on the western side.",
+          "wing": "Western side",
+          "accessibility": "fully_accessible",
+          "highlights": ["Traditional embroidery", "Folk costumes", "Ceramics", "Household artifacts"],
+          "floor": 1
+        },
+        {
+          "id": "voivodes_hall",
+          "name": "Voivodes' Hall",
+          "name_romanian": "Sala Voievozilor",
+          "type": "representative hall",
+          "description": "A monumental hall located on the first floor, dedicated to Moldavian voivodes (rulers). Features period furnishings and historical displays of princely significance.",
+          "accessibility": "fully_accessible",
+          "capacity": 400,
+          "highlights": ["History of Moldavian rulers", "Period furnishings"],
+          "floor": 1
+        },
+        {
+          "id": "honor_hall",
+          "name": "Honor Hall",
+          "name_romanian": "Holul de Onoare",
+          "alternate_name": "Main Central Hall",
+          "type": "representative hall",
+          "description": "A large central decorative space functioning as a foyer between levels. This monumental hall straddles the ground and first floors, originally designed as an open-to-above space. Its grand architecture creates a sense of verticality and grandeur.",
+          "floor_spanning": [0, 1],
+          "accessibility": "fully_accessible",
+          "capacity": 500,
+          "highlights": ["Grand architecture", "Central foyer", "Multi-level design"],
+          "floor": 1
+        }
+      ]
+    },
+    {
+      "floor_number": 2,
+      "floor_name": "Second Floor",
+      "floor_name_romanian": "Etaj 2",
+      "description": "Continuation of ethnographic museum exhibits",
+      "rooms": [
+        {
+          "id": "ethnographic_museum_2",
+          "name": "Ethnographic Museum of Moldavia",
+          "name_romanian": "Muzeul Etnografic al Moldovei",
+          "type": "museum",
+          "description": "Continuation of the ethnographic collection on the second floor. The ethnographic exhibition also occupies space on the second floor in the west side, showcasing additional traditional artifacts and cultural exhibits from across Moldavia.",
+          "wing": "Western side",
+          "accessibility": "fully_accessible",
+          "highlights": ["Traditional embroidery", "Folk costumes", "Ceramics", "Household artifacts"],
+          "floor": 2
+        }
+      ]
+    },
+    {
+      "floor_number": 999,
+      "floor_name": "Other Notable Features",
+      "floor_name_romanian": "Alte Caracteristici Notabile",
+      "description": "Special attractions spanning multiple levels",
+      "rooms": [
+        {
+          "id": "gothic_mosaic_room",
+          "name": "Gothic Mosaic Room",
+          "name_romanian": "Sala Mozaicului Gotic",
+          "type": "attraction",
+          "description": "Stunning decorative mosaic area featuring intricate Gothic-inspired mosaic work and architectural details. The decorative mosaic area is visible in the central hall area, commonly located between the ground and first floors. A must-see attraction showcasing exceptional craftsmanship.",
+          "floor_spanning": [0, 1],
+          "accessibility": "fully_accessible",
+          "highlights": ["Intricate mosaics", "Gothic architecture", "Historical craftsmanship"]
+        },
+        {
+          "id": "palace_clock_tower",
+          "name": "Clock Tower with Panoramic Access",
+          "name_romanian": "Turnul cu Ceas cu Acces Panoramic",
+          "type": "attraction",
+          "description": "Historic clock tower offering panoramic views of Iași city. The tower is an iconic landmark visible throughout the city. Accessed via stairs and elevator in the building. Not a traditional standard floor but an important architectural feature of the palace.",
+          "accessibility": "stairs_required",
+          "highlights": ["City views", "Historic clock", "Architectural landmark"],
+          "note": "Panoramic access available via stairs and elevator access points"
+        }
+      ]
+    }
+  ],
+  "facilities": {
+    "restrooms": {
+      "location": "Every floor near central elevators",
+      "accessible": true,
+      "note": "Clearly marked on floor maps"
+    },
+    "elevators": {
+      "total_count": 3,
+      "locations": ["central_core", "east_wing", "west_wing"],
+      "accessible": true,
+      "wheelchair_accessible": true
+    },
+    "cafeteria": {
+      "location": "First Floor - East side",
+      "hours": "09:00 - 17:30",
+      "services": ["coffee", "snacks", "light_meals", "local_food"],
+      "accepts_payment": ["cash", "card"]
+    },
+    "information_desk": {
+      "location": "Ground Floor - Main Hall",
+      "hours": "10:00 - 17:00",
+      "services": ["directions", "maps", "event_information", "guided_tours"]
+    },
+    "coat_check": {
+      "location": "Main Hall entrance",
+      "cost": "Free",
+      "available": true
+    },
+    "gift_shop": {
+      "location": "Main Hall - South side",
+      "items": ["postcards", "books", "souvenirs", "traditional_crafts"],
+      "hours": "09:00 - 17:30"
+    },
+    "water_fountains": "Multiple locations throughout the palace",
+    "seating_areas": "Available on all floors"
+  },
+  "accessibility": {
+    "wheelchair_access": {
+      "available": true,
+      "description": "Multiple accessible routes with ramps and elevators on all main floors"
+    },
+    "parking": {
+      "accessible_parking": true,
+      "location": "Underground parking adjacent to palace",
+      "spaces_reserved": "Yes, multiple spaces"
+    },
+    "audio_guides": {
+      "available": true,
+      "languages": ["Romanian", "English", "French", "German"],
+      "request_at": "Information desk"
+    },
+    "guided_tours": {
+      "available": true,
+      "languages": ["Romanian", "English", "French"],
+      "duration": "45-90 minutes",
+      "booking": "Information desk or reservation phone"
+    },
+    "mobility_assistance": {
+      "wheelchairs_available": true,
+      "request_at": "Information desk",
+      "cost": "Free"
+    },
+    "accessible_restrooms": {
+      "locations": "Every floor",
+      "features": ["wheelchair_accessible_stalls", "grab_bars", "adequate_space"]
+    }
+  },
+  "culture": {
+    "moldavian_traditions": [
+      {
+        "name": "Traditional Embroidery",
+        "description": "Geometric and floral patterns unique to each region. Different patterns represent fertility, protection, and prosperity.",
+        "regions": ["Botoşani", "Suceava", "Iaşi"]
+      },
+      {
+        "name": "Folk Music & Dance",
+        "description": "Traditional hora (circle dance) and other folk dances performed at celebrations. Often accompanied by traditional instruments.",
+        "instruments": ["nai (pan pipes)", "fluier (wooden flute)", "cobza (stringed lute)"]
+      },
+      {
+        "name": "Easter Traditions",
+        "description": "Elaborate celebrations including egg painting (pysanky) with traditional patterns, religious processions, and family gatherings.",
+        "related_items": ["painted_eggs", "traditional_foods", "church_services"]
+      }
+    ],
+    "traditional_food": [
+      {
+        "name": "Mămăligă",
+        "pronunciation": "Muh-muh-lee-guh",
+        "description": "Creamy cornmeal porridge, a staple food in Moldavian cuisine. Can be served sweet or savory.",
+        "often_served_with": ["sour cream", "cheese", "sauteed_mushrooms"]
+      },
+      {
+        "name": "Sarmale",
+        "pronunciation": "Sarm-ahl-eh",
+        "description": "Cabbage rolls stuffed with rice and meat, slow-cooked in tomato sauce. A traditional holiday dish.",
+        "best_season": "Autumn and winter"
+      },
+      {
+        "name": "Ciorbă de Burtă",
+        "pronunciation": "Chor-buh deh burt-uh",
+        "description": "Traditional sour tripe soup, usually eaten after celebrations. Made with beef tripe and served with sour cream.",
+        "note": "Can be intimidating for first-time visitors but worth trying"
+      },
+      {
+        "name": "Plăcintă",
+        "pronunciation": "pluh-CHN-tuh",
+        "description": "Pastry with various fillings: cheese, apple, cabbage, or meat. Both savory and sweet varieties.",
+        "popular_filling": ["cheese_and_potato", "apple_cinnamon"]
+      },
+      {
+        "name": "Mici",
+        "pronunciation": "MEE-chee",
+        "description": "Grilled meat rolls (similar to kebab), traditional street food and appetizer. Served with mustard and bread.",
+        "where_to_find": "Restaurants, street food vendors"
+      }
+    ],
+    "greetings_and_etiquette": [
+      {
+        "situation": "Formal greeting",
+        "phrase": "Bună ziua (Good afternoon) / Bună seara (Good evening)",
+        "explanation": "Standard greeting, accompanied by a handshake in professional contexts"
+      },
+      {
+        "situation": "Friends greeting",
+        "explanation": "Close friends often greet with a hug or cheek kisses (usually 2 or 3 alternating cheeks)"
+      },
+      {
+        "situation": "Tipping",
+        "explanation": "Tipping 5-10% is common in restaurants and cafes. Not mandatory but appreciated."
+      },
+      {
+        "situation": "Table etiquette",
+        "explanation": "When dining, wait for the host to start eating. Compliments about food are always welcome. Refusing food can be seen as impolite."
+      },
+      {
+        "situation": "Visiting locals",
+        "explanation": "It's polite to remove shoes when entering a home and bring a small gift (wine, flowers, or sweets)"
+      }
+    ],
+    "local_history": {
+      "medieval_period": "Moldavia was an independent principality with strong cultural identity, famous for architectural monuments and resistance against Ottoman expansion",
+      "monastery_culture": "Neamț and Putna monasteries were important cultural centers, preserving medieval manuscripts and theological works",
+      "modern_iasi": "One of Romania's oldest cities (founded 1408) and historically the capital of Moldavian principality. Rich cultural heritage preserved in museums and architecture."
+    }
+  },
+  "tour_suggestions": [
+    {
+      "name": "Quick Visit",
+      "duration_minutes": 45,
+      "focus": ["Honor Hall", "History Museum (Ground Floor) - highlights only", "Gift shop"],
+      "description": "Perfect for busy tourists - see the main architectural features and key museum items"
+    },
+    {
+      "name": "Standard Visit",
+      "duration_minutes": 120,
+      "focus": ["History Museum (Ground Floor)", "Art Museum (First Floor)", "Ethnographic Museum highlights", "Explore first two floors"],
+      "description": "Balanced experience covering main exhibitions without rushing"
+    },
+    {
+      "name": "Cultural Deep Dive",
+      "duration_minutes": 180,
+      "focus": ["All Ground and First Floor museums", "Guided tour", "Gothic Mosaic Room", "Cafeteria break", "Tower views if climbed"],
+      "description": "Comprehensive experience with time for details and cultural context"
+    }
+  ],
+  "nearby_attractions": [
+    {
+      "name": "Metropolitan Cathedral",
+      "distance_km": 0.3,
+      "description": "Beautiful Orthodox cathedral with stunning frescoes and architecture"
+    },
+    {
+      "name": "Copou Park",
+      "distance_km": 0.5,
+      "description": "Large public park perfect for walking, with botanical gardens and peaceful areas"
+    },
+    {
+      "name": "Old Town (Veche Iași)",
+      "distance_km": 1.0,
+      "description": "Historic district with traditional restaurants, shops, and narrow medieval streets"
+    }
+  ],
+  "faq": [
+    {
+      "question": "How long does it take to see the palace?",
+      "answer": "45 minutes for a quick overview, 2-3 hours for a thorough visit. First-time visitors usually spend 90 minutes exploring the ground and first floors."
+    },
+    {
+      "question": "Is photography allowed?",
+      "answer": "Photography is generally allowed in public areas. Some exhibitions may have restrictions - check signs at each room."
+    },
+    {
+      "question": "Do I need a guide?",
+      "answer": "Not required, but guides enhance understanding. Audio guides available in multiple languages. Professional guides can be arranged."
+    },
+    {
+      "question": "What's the best time to visit?",
+      "answer": "Morning hours (10-12 AM) are quieter. Afternoon can be more crowded. Wednesday-Thursday typically have fewer visitors."
+    },
+    {
+      "question": "Can I eat inside the palace?",
+      "answer": "Yes, there's a cafeteria on the First Floor, East side. You can also bring snacks and eat in designated seating areas."
+    },
+    {
+      "question": "Is the palace kid-friendly?",
+      "answer": "Yes! Kids enjoy exploring the halls and many exhibits have interactive elements. The Honor Hall and Gothic Mosaic Room are impressive for all ages."
+    },
+    {
+      "question": "What are the opening hours?",
+      "answer": "Wednesday to Sunday: 10:00 - 17:00. Closed on Mondays and Tuesdays."
+    }
+  ]
+}
