@@ -441,7 +441,7 @@ and is absolutely worth exploring at your own pace."
 User: "Any tip about visiting?"
 Guide: "Great question! Here are my tips:
 
-🌅 Visit early (9-11 AM) for fewer crowds
+🌅 Visit early (10-11 AM) for fewer crowds
 📸 Photography is allowed in public areas (check room-specific signs)
 👟 Comfortable shoes recommended—lots of walking!
 📝 Grab a free map at the information desk
