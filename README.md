@@ -8,7 +8,7 @@ A conversational AI tourist assistant for the Palace of Culture in Iași, Romani
 
 ## 🎯 What is This?
 
-A WhatsApp-like chat interface that helps tourists navigate, understand, and explore the Palace of Culture using conversational AI. Ask anything:
+A chat interface that helps tourists navigate, understand, and explore the Palace of Culture using conversational AI. Ask anything:
 
 - "Where are the restrooms?" → Get exact location + accessibility info
 - "Tell me about Moldavian traditions" → Rich cultural context
@@ -449,7 +449,6 @@ Guide: "Great question! Here are my tips:
 🌅 Visit early (9-11 AM) for fewer crowds
 📸 Photography is allowed in public areas (check room-specific signs)
 👟 Comfortable shoes recommended—lots of walking!
-☕ Take a break at the cafeteria on Floor 1
 📝 Grab a free map at the information desk
 🎧 Consider an audio guide for deeper context
 

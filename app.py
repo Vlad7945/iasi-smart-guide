@@ -90,6 +90,9 @@ YOUR INTERACTION GUIDELINES:
    - Be friendly and enthusiastic about Moldavian culture
    - Use the user's language (Romanian or English)
    - Always end with a helpful question: "Would you like to know anything else?"
+   - DO NOT use markdown formatting, bold text (**), or any special characters in formatting
+   - Write in clear, plain text sentences that are easy to read
+   - Ensure every sentence ends with a period (.)
 
 4. SPECIAL HANDLING:
    - For "I don't know" situations: "That's a great question! Let me help connect you with our information desk staff who specialize in that."
@@ -112,6 +115,38 @@ Remember: You're talking to tourists who may be tired, confused, or overwhelmed.
 # ============================================================================
 # DEEPSEEK API INTEGRATION
 # ============================================================================
+
+def clean_response(text):
+    """
+    Clean up response text to remove markdown formatting and ensure proper punctuation
+    """
+    # Remove markdown bold formatting (**text**)
+    text = text.replace('**', '')
+    
+    # Remove markdown italic formatting (*text*)
+    text = text.replace('*', '')
+    
+    # Split into sentences and clean them up
+    import re
+    sentences = re.split(r'(?<=[.!?])\s+', text.strip())
+    
+    cleaned_sentences = []
+    for sentence in sentences:
+        sentence = sentence.strip()
+        if sentence:
+            # Ensure sentence ends with proper punctuation
+            if not sentence.endswith(('.', '!', '?')):
+                sentence += '.'
+            cleaned_sentences.append(sentence)
+    
+    # Join sentences with proper spacing
+    result = ' '.join(cleaned_sentences)
+    
+    # Ensure the final result ends with a period if it doesn't end with punctuation
+    if result and not result.endswith(('.', '!', '?')):
+        result += '.'
+    
+    return result
 
 def get_deepseek_response(user_message):
     """
@@ -144,6 +179,9 @@ def get_deepseek_response(user_message):
         )
         
         assistant_message = response.choices[0].message.content
+        
+        # Clean up response formatting
+        assistant_message = clean_response(assistant_message)
         
         # Add assistant response to history
         conversation_history.append({

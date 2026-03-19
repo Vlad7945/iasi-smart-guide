@@ -146,8 +146,8 @@ function selectRoom(roomId) {
     const floorInfo = room.floor !== undefined ? `Located on ${room.floor === 0 ? 'ground floor' : `floor ${room.floor}`}` : '';
     const highlightsText = room.highlights ? `\n\nHighlights: ${room.highlights.join(', ')}` : '';
     
-    const message = `You've selected: **${room.name}** (${room.type})\n\n${room.description}${highlightsText}${floorInfo ? '\n\n' + floorInfo : ''}\n\nAsk me anything about this room!`;
-    addMessage(message, 'assistant');
+    const message = `You've selected: ${room.name} (${room.type}). ${room.description}${highlightsText}${floorInfo ? ' ' + floorInfo : ''}. Ask me anything about this room!`;
+    addMessage(cleanText(message), 'assistant');
 }
 
 function showRoomDetail(room) {
@@ -311,8 +311,7 @@ function resetChat() {
     elements.chatMessages.innerHTML = `
         <div class="message assistant-message">
             <div class="message-content">
-                <p><strong>Welcome! 👋</strong></p>
-                <p>I'm your guide to the Palace of Culture. Click a room in the sidebar or ask me anything!</p>
+                <p>Welcome. I'm your guide to the Palace of Culture. Click a room in the sidebar or ask me anything.</p>
             </div>
         </div>
     `;
@@ -320,27 +319,47 @@ function resetChat() {
 }
 
 function showPalaceInfo() {
-    const msg = `**Palace of Culture (Palatul Culturii)**
-
-Location: Boulevard Ștefan cel Mare și Sfânt 1, Iași
-Built: 1906-1925
-Architects: Ion D. Berindey, Alexandru D. Xenopol, Grigore Cerchez
-Height: 55 meters
-
-Hours:
-- Monday-Tuesday: Closed
-- Wednesday-Sunday: 10:00 - 17:00
-
-Phone: +40 232 275 979
-Website: www.palatulculturii.ro
-
-This iconic Neo-Gothic building houses multiple museums and cultural institutions dedicated to Moldavian heritage and history.`;
+    const msg = `Palace of Culture (Palatul Culturii). Location: Boulevard Ștefan cel Mare și Sfânt 1, Iași. Built: 1906-1925. Architects: Ion D. Berindey, Alexandru D. Xenopol, Grigore Cerchez. Height: 55 meters. Hours: Monday-Tuesday Closed. Wednesday-Sunday 10:00 - 17:00. Phone: +40 232 275 979. Website: www.palatulculturii.ro. This iconic Neo-Gothic building houses multiple museums and cultural institutions dedicated to Moldavian heritage and history.`;
     
-    addMessage(msg, 'assistant');
-    conversation.push({ role: 'assistant', content: msg });
+    const cleanedMsg = cleanText(msg);
+    addMessage(cleanedMsg, 'assistant');
+    conversation.push({ role: 'assistant', content: cleanedMsg });
 }
 
 // UTILITIES
+function cleanText(text) {
+    if (!text) return '';
+    
+    // Remove markdown bold (**text**)
+    text = text.replace(/\*\*/g, '');
+    
+    // Remove markdown italic (*text*)
+    text = text.replace(/\*/g, '');
+    
+    // Clean up extra whitespace while preserving sentence structure
+    text = text.replace(/\n+/g, ' ');
+    text = text.replace(/\s+/g, ' ');
+    
+    // Ensure each sentence ends with a period
+    const sentences = text.split(/(?<=[.!?])\s+/);
+    const cleanedSentences = sentences.map(sentence => {
+        sentence = sentence.trim();
+        if (sentence && !sentence.match(/[.!?]$/)) {
+            sentence += '.';
+        }
+        return sentence;
+    }).filter(s => s);
+    
+    let result = cleanedSentences.join(' ');
+    
+    // Ensure final punctuation
+    if (result && !result.match(/[.!?]$/)) {
+        result += '.';
+    }
+    
+    return result;
+}
+
 function escapeHtml(text) {
     if (!text) return '';
     const div = document.createElement('div');

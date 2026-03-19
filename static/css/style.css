@@ -446,6 +446,7 @@ body {
     background: var(--bg-light);
     color: var(--text-primary);
     border: 1px solid var(--border-light);
+    text-align: justify;
 }
 
 .user-message .message-content {
@@ -691,6 +692,7 @@ body {
     margin-bottom: var(--spacing-xl);
     padding-bottom: var(--spacing-lg);
     border-bottom: 1px solid var(--border-light);
+    text-align: justify;
 }
 
 .detail-highlights {
