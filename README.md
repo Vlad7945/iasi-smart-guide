@@ -177,7 +177,6 @@ The palace contains these types of rooms:
 ### Why This Works
 
 **1. Familiar Chat Interface**
-- Looks like WhatsApp/Messenger (users already know how to use it)
 - Reduces cognitive load for stressed travelers
 - Professional, modern design (not AI-generated looking)
 
