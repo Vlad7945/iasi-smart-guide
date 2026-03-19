@@ -213,15 +213,11 @@ The palace contains these types of rooms:
 
 ### Example 1: Navigation Question
 
-**Tourist:** "Where are the restrooms?"
+**Tourist:** "Which rooms are on the first floor?"
 
 **Guide:**
 ```
-The restrooms are available on every floor, conveniently located near the central elevators. 
-They are fully accessible and clearly marked on signage. If you need assistance, our 
-information desk staff are happy to help!
-
-Would you like to know anything else?
+On the First Floor you will find the Art Museum, the Ethnographic Museum of Moldavia on the western side and the grand Voivodes' Hall. The magnificent Honor Hall also spans from the Ground Floor up to this level. Would you like details about any of these specific rooms?
 ```
 
 ### Example 2: Cultural Question
