@@ -2,13 +2,23 @@
   "palace_info": {
     "name": "Palace of Culture",
     "official_name": "Palatul Culturii",
-    "description": "The Palace of Culture in Iași is an emblematic building, built 1906-1925. This iconic structure houses museums dedicated to Moldavian heritage.",
+    "description": "The Palace of Culture in Iași is an emblematic building, built 1906-1925. This iconic Neo-Gothic structure houses the Moldova National Museum Complex with four museums dedicated to Moldavian heritage, culture, art, and science.",
+    "full_description": "The Palace of Culture (Romanian: Palatul Culturii) is an edifice located in Iași, Romania. The building served as the Administrative and Justice Palace until 1955, when its designation and use was changed, and assigned to the four museums nowadays united under the name of Moldavia National Museum Complex. Also, the building houses the Cultural Heritage Conservation-Restoration Centre, and hosts various exhibitions and other events. The Palace of Culture is listed in the National Register of Historic Monuments.",
     "location": "Boulevard Ștefan cel Mare și Sfânt 1, 700028 Iași, Romania",
     "built_years": "1906-1925",
     "opening_year": 1925,
+    "construction_started": 1906,
+    "construction_completed": 1925,
+    "official_inauguration": "11 October 1925 by King Ferdinand I of Romania",
     "architects": ["Ion D. Berindey", "Alexandru D. Xenopol", "Grigore Cerchez"],
-    "architectural_styles": ["Neogothic", "Neoclassical"],
+    "main_architect": "I.D. Berindei",
+    "architectural_styles": ["Neo-Gothic", "Neoclassical"],
     "height_meters": 55,
+    "building_area_sqm": 34236,
+    "building_area_sqft": 368510,
+    "rooms_count": 298,
+    "windows_front": 92,
+    "windows_interior": 36,
     "opening_hours": {
       "monday": "Closed",
       "tuesday": "Closed",
@@ -20,7 +30,153 @@
     },
     "closed_days": "Monday, Tuesday",
     "phone": "+40 232 275 979",
-    "website": "www.palatulculturii.ro"
+    "website": "www.palatulculturii.ro",
+    "history": {
+      "previous_building": "Built on the location of the medieval Princely Court of Moldavia (from 1434)",
+      "former_names": ["Princely Palace of Moldavia", "Administrative Palace"],
+      "previous_renovations": [
+        {
+          "year": "1803-1806",
+          "prince": "Alexandru Moruzi",
+          "architect": "Johann Freywald"
+        },
+        {
+          "year": "1841-1843",
+          "prince": "Mihail Sturdza",
+          "architect": "Nicolai Sungurov"
+        }
+      ],
+      "legend": "Palace inherited the legend of 365 rooms, as many as the days within one year",
+      "construction_notes": "Reconstruction started in 1906-1907, halted during World War I due to resource limitations. The unfinished building sheltered Romanian and Russian troops, and housed different public institutions and military hospitals.",
+      "ww2_history": "During World War II, the Palace sheltered German troops, then Soviet troops",
+      "modernization": "1975-1977: Wood bridging from the last floor was replaced with cement and steel netting",
+      "earthquake": "The new bridging sustained the monument during the 1977 earthquake, but the first floor bridging, walls, ornaments and relief works were affected",
+      "restoration": "Large-scale restoration project (one of most complex in Romania since 1990) began in 2008, main works completed in April 2016",
+      "library": "Between 1955 and 2010, the Palace hosted the main branch of the Iași County Library",
+      "function_change": "1955: Changed from County Law Court and public institutions to exclusive cultural function"
+    },
+    "architecture": {
+      "design_style": "Flamboyant Neo-Gothic (unlike the old palace built in neoclassical style)",
+      "central_hall": "Shows figurative mosaic with Gothic bestiary - two-headed eagles, dragons, griffons, lions - concentrically arranged",
+      "glass_ceiling": "Superposed by glass ceiling room, where initially a greenhouse was arranged",
+      "modern_features": "Despite archaic-looking design, integrated modern materials and technologies of the era",
+      "innovative_materials": "Stone blocks replaced with light and cheaper materials. Special material licensed by Henri Coandă called bois-ciment imitating oak wood",
+      "decorative_ironmongery": "Remarkable decorative iron elements on doors of Voivodes' Hall",
+      "high_tech_features": "Electric lighting, pneumatic heating, ventilation system, thermostat, vacuum cleaners (all directed from machinery room at underground level)",
+      "fire_safety": "Treated wooden attic with ignifugeous product called orniton; roof uses special material named eternite (due to 14 fires affecting previous buildings)"
+    },
+    "clock_tower": {
+      "description": "Central architectural piece with crenels and alcoves dominated by eagle with open wings",
+      "access_method": "Great donjon tower serving as entrance",
+      "clock_faces": 3,
+      "clock_diameter_meters": 3.25,
+      "clock_diameter_feet": 11,
+      "clock_decoration": "Faces decorated with stained glass representing 12 astrological signs",
+      "guards_design": "Two young men dressed in national costumes painted on sides of clock faces (inspired from Peleș Castle)",
+      "illumination": "Stained glass windows and cross-shaped crenelations electrically illuminated at night",
+      "carillon_bells": 8,
+      "carillon_song": "Hora Unirii",
+      "carillon_mechanism": "Drum with 69 pins, plays each hour"
+    },
+    "museums": {
+      "complex_name": "Moldova National Museum Complex",
+      "complex_name_romanian": "Complexul Muzeal Național \"Moldova\"",
+      "description": "Four museums located in the Palace of Culture with own stores, libraries, and temporary exhibition halls",
+      "list": [
+        {
+          "name": "Art Museum",
+          "founded": 1860,
+          "note": "Oldest and largest art collection in Romania",
+          "artworks": 8700,
+          "national_patrimony": 1000,
+          "location": "First floor with 24 permanent exhibition rooms",
+          "galleries": ["Universal Art Gallery", "Romanian Modern Art Gallery", "Contemporary Art Gallery"],
+          "notable_artists": "Caravaggio, Paolo Veronese, Pietro Liberi, Carlo Dolci, Salvator Rosa, Francesco Solimena, Bartolomé Esteban Murillo, Anthony van Dyck, Jan Both, Bartholomeus van der Helst, Egbert van Heemskerk II, Nicolas Poussin, Philippe de Champaigne, Eustache Le Sueur, Guillaume Coustou, François Boucher"
+        },
+        {
+          "name": "Moldavia's History Museum",
+          "founded": 1916,
+          "objects": 48000,
+          "location": "West wing of ground floor",
+          "heritage": "Continuation of Antiquity Museum founded by Orest Tafrali in 1916",
+          "sections": ["Prehistory and Ancient History", "Medieval History", "Modern History", "Contemporary History"],
+          "notable_items": [
+            "70,000-year-old mammoth skull from Middle Palaeolithic Era",
+            "Pottery from Cucuteni culture",
+            "Dacian, Sarmatian, Gothic, and Roman artifacts",
+            "Armory and medieval items"
+          ],
+          "related_museums": ["Union Museum in Iași", "Mihail Kogălniceanu Memorial Museum in Iași", "Al. I. Cuza Memorial Palace in Ruginoasa", "Archaeological Reserve of Cucuteni"]
+        },
+        {
+          "name": "Ethnographic Museum of Moldavia",
+          "founded": 1943,
+          "objects": 13000,
+          "location": "West side, first and second floor",
+          "description": "Depicts Romanian advance through ages with objects used by inhabitants in daily activities",
+          "exhibits": [
+            "Agriculture and viticulture items",
+            "Animal raising equipment",
+            "Fishing and hunting tools",
+            "Apiculture items",
+            "Interiors of peasant houses",
+            "Pottery and weaving devices",
+            "Wood processing tools",
+            "Mask collections",
+            "Traditional costumes (many over 100 years old)"
+          ],
+          "related_museum": "Wine and Vineyard Museum in Hârlău"
+        },
+        {
+          "name": "Ștefan Procopiu Science and Technique Museum",
+          "founded": 1955,
+          "original_name": "Polytechnical Museum",
+          "renamed": 1994,
+          "renamed_after": "Physicist Ștefan Procopiu",
+          "objects": 8500,
+          "location": "Ground floor, east wing",
+          "sections": [
+            "Energetics",
+            "Sound Recording and Playback (unique within Romania)",
+            "Telecommunications",
+            "Mineralogy - Crystallography",
+            "Computers"
+          ],
+          "related_museum": "Poni-Cernătescu Memorial Museum in Iași"
+        }
+      ]
+    },
+    "other_attractions": {
+      "gothic_room": {
+        "name": "Gothic Room",
+        "description": "Contains mosaic presenting medieval bestiarum (gryphons, bicephalous eagles, lions)"
+      },
+      "voivodes_room": {
+        "name": "Voivodes' Room",
+        "location": "First floor",
+        "description": "Portraits of Moldavia's rulers and Romania's kings starting with Decebalus and Trajan, plus paintings by Ștefan Dimitrescu and students"
+      },
+      "henri_coanda_room": {
+        "name": "Henri Coandă Room",
+        "description": "Named after carvings and relief works made by famous Romanian inventor of a cement invented by him"
+      },
+      "watch_tower": {
+        "name": "Turnul de Strajă (Watch Tower)",
+        "description": "Reminiscence of old Princely Court of Iași, with galleries underneath the court of the palace"
+      },
+      "lapidarium": {
+        "name": "Lapidarium",
+        "description": "Collection of capitals and other stone architectonic elements grouped on the left side"
+      },
+      "glass_ceiling_room": {
+        "description": "Superposed by glass ceiling room, where initially a greenhouse was arranged"
+      },
+      "stephen_statue": {
+        "name": "Equestrian statue of Stephen the Great",
+        "location": "In front of the palace",
+        "companions": "Framed by two Krupp cannons (trophies from Romanian War of Independence)"
+      }
+    }
   },
   "floors": [
     {
@@ -151,6 +307,54 @@
           "accessibility": "stairs_required",
           "highlights": ["City views", "Historic clock", "Architectural landmark"],
           "note": "Panoramic access available via stairs and elevator access points"
+        },
+        {
+          "id": "henri_coanda_room",
+          "name": "Henri Coandă Room",
+          "name_romanian": "Sala Henri Coandă",
+          "type": "attraction",
+          "description": "Special room dedicated to the decorative carvings and relief works associated with Henri Coandă's innovation in bois-ciment, a material that imitates carved oak wood. It highlights the palace's blend of historic style and modern technology.",
+          "floor": 1,
+          "accessibility": "fully_accessible",
+          "highlights": ["Bois-ciment decoration", "Relief carvings", "Henri Coandă legacy"]
+        },
+        {
+          "id": "watch_tower",
+          "name": "Turnul de Strajă (Watch Tower)",
+          "name_romanian": "Turnul de Strajă",
+          "type": "attraction",
+          "description": "A watch tower that preserves the memory of the old Princely Court of Iași. It includes historical passages and galleries underneath the palace court, offering insight into the site's medieval layers.",
+          "accessibility": "partially_accessible",
+          "highlights": ["Historic tower", "Medieval court remnants", "Underground galleries"]
+        },
+        {
+          "id": "lapidarium",
+          "name": "Lapidarium",
+          "name_romanian": "Lapidarium",
+          "type": "attraction",
+          "description": "Architectural stone collection displaying capitals and carved elements recovered from earlier historical structures. The exhibit helps visitors understand the evolution of local craftsmanship and architecture.",
+          "accessibility": "fully_accessible",
+          "highlights": ["Stone capitals", "Architectural fragments", "Historical craftsmanship"]
+        },
+        {
+          "id": "glass_ceiling_room",
+          "name": "Glass Ceiling Room",
+          "name_romanian": "Sala cu Tavan de Sticlă",
+          "type": "attraction",
+          "description": "Upper room above the central hall featuring a glass ceiling area originally designed as a greenhouse. It contributes to the palace's dramatic vertical perspective and natural light effects.",
+          "floor": 1,
+          "accessibility": "fully_accessible",
+          "highlights": ["Glass ceiling", "Original greenhouse concept", "Natural lighting design"]
+        },
+        {
+          "id": "stephen_statue",
+          "name": "Equestrian Statue of Stephen the Great",
+          "name_romanian": "Statuia ecvestră a lui Ștefan cel Mare",
+          "type": "attraction",
+          "description": "Iconic equestrian monument positioned in front of the palace, framed by two Krupp cannons captured during the Romanian War of Independence. It is one of the most photographed symbols in the palace area.",
+          "floor": 0,
+          "accessibility": "fully_accessible",
+          "highlights": ["Historic monument", "Krupp cannons", "Landmark photo point"]
         }
       ]
     }
