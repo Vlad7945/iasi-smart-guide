@@ -372,10 +372,8 @@
       "wheelchair_accessible": true
     },
     "cafeteria": {
-      "location": "First Floor - East side",
-      "hours": "09:00 - 17:30",
-      "services": ["coffee", "snacks", "light_meals", "local_food"],
-      "accepts_payment": ["cash", "card"]
+      "location": "Not available inside the palace",
+      "note": "There are multiple cafes near Palas Iași, a short walk from the Palace of Culture."
     },
     "information_desk": {
       "location": "Ground Floor - Main Hall",
@@ -521,7 +519,7 @@
     {
       "name": "Cultural Deep Dive",
       "duration_minutes": 180,
-      "focus": ["All Ground and First Floor museums", "Guided tour", "Gothic Mosaic Room", "Cafeteria break", "Tower views if climbed"],
+      "focus": ["All Ground and First Floor museums", "Guided tour", "Gothic Mosaic Room", "Cafe break near Palas Iași", "Tower views if climbed"],
       "description": "Comprehensive experience with time for details and cultural context"
     }
   ],
@@ -561,7 +559,7 @@
     },
     {
       "question": "Can I eat inside the palace?",
-      "answer": "Yes, there's a cafeteria on the First Floor, East side. You can also bring snacks and eat in designated seating areas."
+      "answer": "There is no cafeteria inside the palace. You can find multiple cafes near Palas Iași, just a short walk away."
     },
     {
       "question": "Is the palace kid-friendly?",
