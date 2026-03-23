@@ -29,10 +29,28 @@ MAX_HISTORY = 20  # Keep last 20 messages for context
 # Load palace knowledge base - reload on each request to get latest changes
 def load_palace_data():
     """Load palace data from JSON - fresh load each time"""
-    # Use absolute path to ensure it works on Railway and other hosting
-    palace_data_path = os.path.join(os.path.dirname(__file__), 'palace_data.json')
-    with open(palace_data_path, 'r', encoding='utf-8') as f:
-        return json.load(f)
+    # Try multiple paths to find the file (local vs Railway)
+    possible_paths = [
+        os.path.join(os.path.dirname(__file__), 'palace_data.json'),  # Relative to app.py
+        os.path.join(os.getcwd(), 'palace_data.json'),  # Current working directory
+        'palace_data.json',  # Relative path
+    ]
+    
+    for path in possible_paths:
+        try:
+            if os.path.exists(path) and os.path.isfile(path):
+                print(f"Loading palace data from: {path}")
+                with open(path, 'r', encoding='utf-8') as f:
+                    return json.load(f)
+        except Exception as e:
+            print(f"Failed to load from {path}: {e}")
+            continue
+    
+    # If all paths fail, raise an error with details
+    raise FileNotFoundError(
+        f"palace_data.json not found in any of these locations: {possible_paths}. "
+        f"Current directory: {os.getcwd()}. App directory: {os.path.dirname(__file__)}"
+    )
 
 # ============================================================================
 # SYSTEM PROMPTS & CONTEXT BUILDING
@@ -297,12 +315,28 @@ def get_palace_data_api():
     """
     Return palace data for frontend to render rooms
     """
-    response = jsonify(load_palace_data())
-    # Prevent caching of API response
-    response.headers['Cache-Control'] = 'no-cache, no-store, must-revalidate, max-age=0'
-    response.headers['Pragma'] = 'no-cache'
-    response.headers['Expires'] = '0'
-    return response
+    try:
+        palace_data_path = os.path.join(os.path.dirname(__file__), 'palace_data.json')
+        
+        # Debug logging
+        print(f"Loading palace data from: {palace_data_path}")
+        print(f"File exists: {os.path.exists(palace_data_path)}")
+        print(f"Current working directory: {os.getcwd()}")
+        print(f"__file__ value: {__file__}")
+        
+        data = load_palace_data()
+        response = jsonify(data)
+        # Prevent caching of API response
+        response.headers['Cache-Control'] = 'no-cache, no-store, must-revalidate, max-age=0'
+        response.headers['Pragma'] = 'no-cache'
+        response.headers['Expires'] = '0'
+        return response
+    except Exception as e:
+        error_msg = f"Failed to load palace data: {str(e)}"
+        print(f"ERROR in /api/palace-data: {error_msg}")
+        import traceback
+        traceback.print_exc()
+        return jsonify({'error': error_msg}), 500
 
 
 # ============================================================================
