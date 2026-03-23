@@ -29,28 +29,8 @@ MAX_HISTORY = 20  # Keep last 20 messages for context
 # Load palace knowledge base - reload on each request to get latest changes
 def load_palace_data():
     """Load palace data from JSON - fresh load each time"""
-    # Try multiple paths to find the file (local vs Railway)
-    possible_paths = [
-        os.path.join(os.path.dirname(__file__), 'palace_data.json'),  # Relative to app.py
-        os.path.join(os.getcwd(), 'palace_data.json'),  # Current working directory
-        'palace_data.json',  # Relative path
-    ]
-    
-    for path in possible_paths:
-        try:
-            if os.path.exists(path) and os.path.isfile(path):
-                print(f"Loading palace data from: {path}")
-                with open(path, 'r', encoding='utf-8') as f:
-                    return json.load(f)
-        except Exception as e:
-            print(f"Failed to load from {path}: {e}")
-            continue
-    
-    # If all paths fail, raise an error with details
-    raise FileNotFoundError(
-        f"palace_data.json not found in any of these locations: {possible_paths}. "
-        f"Current directory: {os.getcwd()}. App directory: {os.path.dirname(__file__)}"
-    )
+    with open('palace_data.json', 'r', encoding='utf-8') as f:
+        return json.load(f)
 
 # ============================================================================
 # SYSTEM PROMPTS & CONTEXT BUILDING
