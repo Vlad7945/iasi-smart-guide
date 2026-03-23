@@ -821,6 +821,10 @@ body {
         display: none;
     }
 
+    .welcome-tips {
+        display: none;
+    }
+
     .message-content {
         max-width: 90%;
         padding: var(--spacing-md);
