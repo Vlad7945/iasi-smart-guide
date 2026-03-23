@@ -316,17 +316,8 @@ def get_palace_data_api():
     Return palace data for frontend to render rooms
     """
     try:
-        palace_data_path = os.path.join(os.path.dirname(__file__), 'palace_data.json')
-        
-        # Debug logging
-        print(f"Loading palace data from: {palace_data_path}")
-        print(f"File exists: {os.path.exists(palace_data_path)}")
-        print(f"Current working directory: {os.getcwd()}")
-        print(f"__file__ value: {__file__}")
-        
         data = load_palace_data()
         response = jsonify(data)
-        # Prevent caching of API response
         response.headers['Cache-Control'] = 'no-cache, no-store, must-revalidate, max-age=0'
         response.headers['Pragma'] = 'no-cache'
         response.headers['Expires'] = '0'
@@ -337,6 +328,19 @@ def get_palace_data_api():
         import traceback
         traceback.print_exc()
         return jsonify({'error': error_msg}), 500
+
+
+@app.route('/palace_data.json', methods=['GET'])
+def serve_palace_data_static():
+    """
+    Serve palace_data.json as static file (fallback method)
+    """
+    try:
+        data = load_palace_data()
+        return jsonify(data)
+    except Exception as e:
+        print(f"ERROR serving palace_data.json: {str(e)}")
+        return jsonify({'error': str(e)}), 500
 
 
 # ============================================================================

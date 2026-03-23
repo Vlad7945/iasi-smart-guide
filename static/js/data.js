@@ -8,13 +8,23 @@ let allRooms = [];
 async function loadPalaceData() {
     try {
         const timestamp = Date.now();
-        const response = await fetch(`/api/palace-data?t=${timestamp}`, {
+        // Try primary endpoint first
+        let response = await fetch(`/api/palace-data?t=${timestamp}`, {
             method: 'GET',
             cache: 'no-store'
         });
         
+        // If primary endpoint fails, try fallback
         if (!response.ok) {
-            throw new Error('Failed to load palace data');
+            console.warn('Primary endpoint failed, trying fallback...');
+            response = await fetch(`/palace_data.json?t=${timestamp}`, {
+                method: 'GET',
+                cache: 'no-store'
+            });
+        }
+        
+        if (!response.ok) {
+            throw new Error(`Failed to load palace data (status: ${response.status})`);
         }
         
         palaceData = await response.json();
