@@ -29,7 +29,9 @@ MAX_HISTORY = 20  # Keep last 20 messages for context
 # Load palace knowledge base - reload on each request to get latest changes
 def load_palace_data():
     """Load palace data from JSON - fresh load each time"""
-    with open('palace_data.json', 'r', encoding='utf-8') as f:
+    # Use absolute path to ensure it works on Railway and other hosting
+    palace_data_path = os.path.join(os.path.dirname(__file__), 'palace_data.json')
+    with open(palace_data_path, 'r', encoding='utf-8') as f:
         return json.load(f)
 
 # ============================================================================
