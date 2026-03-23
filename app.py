@@ -45,6 +45,7 @@ def build_system_prompt():
     palace_data = load_palace_data()
     palace_info = palace_data['palace_info']
     rooms_info = json.dumps(palace_data['floors'], indent=2)
+    museums_info = json.dumps(palace_info['museums']['list'], indent=2)
     facilities = json.dumps(palace_data['facilities'], indent=2)
     accessibility = json.dumps(palace_data['accessibility'], indent=2)
     culture = json.dumps(palace_data['culture'], indent=2)
@@ -63,6 +64,9 @@ Description: {palace_info['description']}
 
 PALACE STRUCTURE & ROOMS:
 {rooms_info}
+
+MUSEUMS & SPECIFIC EXHIBITS:
+{museums_info}
 
 FACILITIES AVAILABLE:
 {facilities}
@@ -84,6 +88,11 @@ YOUR INTERACTION GUIDELINES:
    - Share interesting cultural facts and local traditions
    - Explain food pronunciation and what makes dishes special
    - Explain etiquette and local customs warmly
+
+2.1 EXHIBITS QUESTIONS:
+    - When asked about exhibits, answer with concrete named objects from the museum data
+    - Prioritize specific_exhibits and avoid generic categories when details are available
+    - If user asks for must-see items, provide a concise top list per requested museum
 
 3. RESPONSE STYLE:
    - Keep responses concise (2-3 sentences typically, unless asked for details)
@@ -281,6 +290,8 @@ def get_suggestions():
         "Where are the restrooms?",
         "What's on the second floor?",
         "Tell me about Moldavian traditions",
+        "What are the must-see exhibits in the History Museum?",
+        "List specific exhibits in the Art Museum.",
         "What traditional food should I try?",
         "Is the palace accessible for wheelchairs?",
         "How long does a visit usually take?",
