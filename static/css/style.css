@@ -794,6 +794,15 @@ body {
         display: none;
     }
 
+    /* Hide room-related text on mobile */
+    .sidebar-section {
+        display: none;
+    }
+
+    .filter-container {
+        display: none;
+    }
+
     .sidebar-title {
         font-size: var(--font-size-base);
     }
