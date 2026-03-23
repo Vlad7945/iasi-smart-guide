@@ -91,8 +91,40 @@
           "national_patrimony": 1000,
           "location": "First floor with 24 permanent exhibition rooms",
           "galleries": ["Universal Art Gallery", "Romanian Modern Art Gallery", "Contemporary Art Gallery"],
-          "notable_artists": "Caravaggio, Paolo Veronese, Pietro Liberi, Carlo Dolci, Salvator Rosa, Francesco Solimena, Bartolomé Esteban Murillo, Anthony van Dyck, Jan Both, Bartholomeus van der Helst, Egbert van Heemskerk II, Nicolas Poussin, Philippe de Champaigne, Eustache Le Sueur, Guillaume Coustou, François Boucher"
-        },
+          "notable_artists": "Caravaggio, Paolo Veronese, Pietro Liberi, Carlo Dolci, Salvator Rosa, Francesco Solimena, Bartolomé Esteban Murillo, Anthony van Dyck, Jan Both, Bartholomeus van der Helst, Egbert van Heemskerk II, Nicolas Poussin, Philippe de Champaigne, Eustache Le Sueur, Guillaume Coustou, François Boucher",
+          "specific_exhibits": {
+            "romanian_modern_art": [
+              {
+                "name": "Paintings by Nicolae Grigorescu",
+                "description": "Works by one of Romania's most celebrated painters"
+              },
+              {
+                "name": "Works by Ștefan Luchian",
+                "description": "Important Romanian modern artist"
+              }
+            ],
+            "collections": [
+              {
+                "name": "Asachi collection",
+                "description": "Curated artworks from the Asachi heritage"
+              },
+              {
+                "name": "Negri collection",
+                "description": "Curated artworks from the Negri heritage"
+              },
+              {
+                "name": "Donici collection",
+                "description": "Curated artworks from the Donici heritage"
+              }
+            ],
+            "european_art": [
+              {
+                "name": "European paintings by Western artists",
+                "description": "Works from various European artists and periods"
+              }
+            ]
+          }
+        }
         {
           "name": "Moldavia's History Museum",
           "founded": 1916,
@@ -106,6 +138,79 @@
             "Dacian, Sarmatian, Gothic, and Roman artifacts",
             "Armory and medieval items"
           ],
+          "specific_exhibits": {
+            "prehistory_and_antiquity": [
+              {
+                "name": "Skull of Mammuthus trogontherii",
+                "age_years": 350000,
+                "significance": "Unique in Romania",
+                "period": "Middle Palaeolithic Era"
+              },
+              {
+                "name": "Clactonian flake from Valea Lupului",
+                "significance": "The oldest artifact in the museum"
+              },
+              {
+                "name": "Spindle whorl with runic inscription",
+                "locations": ["Erbiceni", "Lețcani"]
+              }
+            ],
+            "cucuteni_culture": [
+              {
+                "name": "Original Cucuteni ceramic vessels",
+                "description": "Painted pottery characteristic of Cucuteni culture"
+              }
+            ],
+            "medieval_period": [
+              {
+                "name": "Throne of Alexandru Lăpușneanu",
+                "period": "Medieval / Princely Period"
+              },
+              {
+                "name": "Sealed princely charters",
+                "century": "17th century documents"
+              },
+              {
+                "name": "Boyar lady's coat (contăș)",
+                "description": "Embroidered with gold and silver thread"
+              }
+            ],
+            "weapons_and_historical_objects": [
+              {
+                "name": "Sword attributed to Alexandru Ipsilanti",
+                "year": 1821
+              },
+              {
+                "name": "Hunting sword of Alexandru Ioan Cuza",
+                "description": "Gift from Napoleon III"
+              },
+              {
+                "name": "Campaign chest of Colonel Cerchez",
+                "event": "Plevna War"
+              }
+            ],
+            "symbolic_objects": [
+              {
+                "name": "19th-century Moldavian princely throne",
+                "period": "19th century"
+              },
+              {
+                "name": "Silver vessel bearing a princely coat of arms",
+                "description": "Decorated with heraldic symbols"
+              },
+              {
+                "name": "Pendant from the Răducăneni treasure",
+                "period": "9th–10th century"
+              }
+            ],
+            "special_discovery": [
+              {
+                "name": "The Moldavian Monoxyl",
+                "description": "Medieval dugout boat carved from a single tree trunk",
+                "period": "Medieval"
+              }
+            ]
+          },
           "related_museums": ["Union Museum in Iași", "Mihail Kogălniceanu Memorial Museum in Iași", "Al. I. Cuza Memorial Palace in Ruginoasa", "Archaeological Reserve of Cucuteni"]
         },
         {
@@ -125,6 +230,41 @@
             "Mask collections",
             "Traditional costumes (many over 100 years old)"
           ],
+          "specific_exhibits": {
+            "traditional_masks": [
+              {
+                "name": "Authentic traditional ritual masks",
+                "description": "Used in winter customs and seasonal celebrations",
+                "significance": "Important part of Moldavian cultural traditions"
+              }
+            ],
+            "textiles_and_costumes": [
+              {
+                "name": "Original Moldavian woven rugs (scoarțe)",
+                "age": "Over 100 years old",
+                "description": "Traditional weaving patterns and techniques"
+              },
+              {
+                "name": "Traditional costumes",
+                "age": "Many over 100 years old",
+                "description": "Authentic folk garments from various Moldavian regions"
+              }
+            ],
+            "crafts_and_production": [
+              {
+                "name": "Functional traditional weaving looms",
+                "description": "Working displays showing historical textile production"
+              },
+              {
+                "name": "Original pottery-making installations",
+                "description": "Tools and workspace used for traditional pottery manufacturing"
+              },
+              {
+                "name": "Traditional woodworking tools",
+                "description": "Historical tools and techniques of Moldavian carpentry"
+              }
+            ]
+          },
           "related_museum": "Wine and Vineyard Museum in Hârlău"
         },
         {
@@ -142,6 +282,40 @@
             "Mineralogy - Crystallography",
             "Computers"
           ],
+          "specific_exhibits": {
+            "measuring_instruments": [
+              {
+                "name": "Original measuring instruments",
+                "description": "Linked to Ștefan Procopiu's research in physics"
+              }
+            ],
+            "sound_recording_and_playback": [
+              {
+                "name": "Historical phonographs",
+                "period": "19th–20th century"
+              },
+              {
+                "name": "Historical gramophones",
+                "period": "19th–20th century"
+              },
+              {
+                "name": "Experimental installation converting sound into vibrations",
+                "description": "Interactive exhibit showing sound physics"
+              }
+            ],
+            "telecommunications_and_radio": [
+              {
+                "name": "Early 20th-century radio receivers",
+                "description": "Original models from the early wireless era"
+              }
+            ],
+            "mechanical_innovations": [
+              {
+                "name": "Mechanical musical automatons",
+                "description": "Automated musical devices showcasing mechanical precision"
+              }
+            ]
+          },
           "related_museum": "Poni-Cernătescu Memorial Museum in Iași"
         }
       ]
