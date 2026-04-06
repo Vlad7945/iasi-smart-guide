@@ -6,57 +6,102 @@
     <title>Palace of Culture - Virtual Guide - Iași</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+<script type="module">
+    console.log("MODULE INLINE WORKS");
+</script>
 </head>
 <body>
     <div class="app-container">
-        <!-- HEADER -->
-        <header class="header">
-            <div class="header-content">
-                <div class="logo-section">
-                    <h1 class="logo-title">Palace of Culture</h1>
-                    <p class="logo-subtitle">Explore Iași's Cultural Landmark</p>
-                </div>
-                <div class="header-actions">
-                    <button class="icon-btn" id="infoBtn" title="Palace Information">
-                        <i class="fas fa-info-circle"></i>
-                    </button>
-                    <button class="icon-btn" id="resetBtn" title="Start New Chat">
-                        <i class="fas fa-sync-alt"></i>
-                    </button>
-                </div>
-            </div>
-        </header>
+
+        <banner-element
+                title="Palace of Culture"
+                subtitle="Explore Iași's Cultural Landmark">
+            <toggle-menu-button></toggle-menu-button>
+            <reload-button></reload-button>
+            <info-button></info-button>
+        </banner-element>
 
         <div class="main-content">
-            <!-- SIDEBAR - ROOMS -->
+            <sidebar-element>
+                <sidebar-filter></sidebar-filter>
+                <sidebar-search></sidebar-search>
+            </sidebar-element>
+            <chat-area>
+                <chat-input></chat-input>
+                <default-message></default-message>
+            </chat-area>
+        </div>
+    </div>
+    <!-- TOAST NOTIFICATIONS -->
+    <div class="toast" id="toast"></div>
+{#                                              #}
+{#                                              #}
+    {#             <T E M P L A T E U R I>         #}
+        <template id="banner-template">
+                <header class="header">
+                <div class="header-content">
+                    <!-- LEFT SIDE -->
+                    <div style="display:flex; align-items:center; gap:10px;">
+                        <div class="menu-slot"></div>
+                    <div class="logo-section">
+                        <h1 class="logo-title">Palace of Culture</h1>
+                        <p class="logo-subtitle">Explore Iași's Cultural Landmark</p>
+                    </div>
+                    <div class="header-actions"></div>
+                </div>
+                </header>
+        </template>
+        <template id="toggle-menu-template">
+            <button class="icon-btn" id="menuBtn" title="Toggle Menu">
+                <i class="fas fa-bars"></i>
+            </button>
+        </template>
+        <template id="info-button-template">
+            <button class="icon-btn" id="infoBtn" title="Palace Information">
+                <i class="fas fa-info-circle"></i>
+            </button>
+        </template>
+        <template id="reload-button-template">
+            <button class="icon-btn" id="resetBtn" title="Start New Chat">
+                <i class="fas fa-sync-alt"></i>
+            </button>
+        </template>
+        <template id="sidebar-template">
             <aside class="sidebar">
                 <div class="sidebar-section">
                     <h2 class="sidebar-title">Explore Rooms</h2>
-                    <div class="search-container">
-                        <input 
-                            type="text" 
-                            id="roomSearch" 
-                            placeholder="Find a room..." 
-                            class="search-input"
-                        />
-                        <i class="fas fa-search search-icon"></i>
-                    </div>
                 </div>
+                <div class="rooms-list" id="roomsList"></div>
+            </aside>
+        </template>
 
-                <div class="filter-container">
+        <template id="sidebar-search-template">
+            <div class="search-container">
+                <input
+                        type="text"
+                        id="roomSearch"
+                        placeholder="Find a room..."
+                        class="search-input"
+                />
+                <i class="fas fa-search search-icon"></i>
+            </div>
+        </template>
+        <template id="sidebar-filter-template">
+            <div class="filter-container">
                     <button class="filter-tab active" data-filter="all">All Rooms</button>
                     <button class="filter-tab" data-filter="museum">Museums</button>
                     <button class="filter-tab" data-filter="representative hall">Halls</button>
                     <button class="filter-tab" data-filter="attraction">Attractions</button>
-                </div>
-
-                <div class="rooms-list" id="roomsList">
-                    <!-- Populated by JS -->
-                </div>
-            </aside>
-
-            <!-- MAIN CHAT AREA -->
-            <main class="chat-area">
+            </div>
+        </template>
+        <template id="room-item-template">
+            <div class="room-item">
+                <div class="room-name"></div>
+                <div class="room-type"></div>
+                <div class="room-floor-info"></div>
+            </div>
+        </template>
+        <template id="chat-template">
                 <!-- PROFESSIONAL ROOM DETAIL VIEW -->
                 <div class="room-detail-view" id="roomDetailView" style="display: none;">
                     <div class="detail-view-header">
@@ -66,22 +111,22 @@
                         <h1 id="detailRoomTitle"></h1>
                         <div style="width: 60px;"></div>
                     </div>
-                    
+
                     <div class="detail-view-content">
                         <div class="detail-main">
                             <div class="detail-meta">
                                 <span class="meta-badge" id="detailType"></span>
                                 <span class="meta-location" id="detailFloor"></span>
                             </div>
-                            
+
                             <p class="detail-description" id="detailDescription"></p>
-                            
+
                             <div id="detailHighlights" class="detail-highlights"></div>
-                            
+
                             <div id="detailExtras" class="detail-extras"></div>
                         </div>
                     </div>
-                    
+
                     <div class="detail-view-chat">
                         <p style="text-align: center; color: #999; font-size: 14px; margin-bottom: 1rem;">Ask our guide about this room</p>
                         <form id="detailChatForm" onsubmit="sendDetailMessage(event)">
@@ -102,48 +147,76 @@
                     </div>
                 </div>
 
-                <!-- CHAT INTERFACE -->
                 <div class="chat-container" id="chatContainer">
                     <div class="chat-messages" id="chatMessages">
-                        <!-- Welcome Message -->
-                        <div class="message assistant-message">
-                            <div class="message-content">
-                                <p class="message-title">Welcome to Your Private Tour</p>
-                                <p>I'm your personal guide to the Palace of Culture. Select a room from the sidebar to explore, or ask me anything about the palace—from Moldavian culture to architecture, food recommendations, and accessibility information.</p>
-                                <div class="welcome-tips">
-                                    <p><strong>Getting Started:</strong> Click any room in the sidebar, or type your question below.</p>
-                                </div>
-                            </div>
-                        </div>
+                        <div class="messages-slot"></div>
                     </div>
 
                     <!-- INPUT AREA -->
-                    <div class="input-section">
-                        <form id="chatForm" onsubmit="sendMessage(event)">
-                            <div class="input-box">
-                                <input
-                                    type="text"
-                                    id="messageInput"
-                                    placeholder="Ask me anything about the palace..."
-                                    autocomplete="off"
-                                    maxlength="500"
-                                    class="message-input"
-                                />
-                                <button type="submit" class="btn-send" id="sendButton">
-                                    <i class="fas fa-arrow-right"></i>
-                                </button>
-                            </div>
-                        </form>
+                    <div class="input-slot"></div>
+{#                    <div class="input-section">#}
+{#                        <form id="chatForm" onsubmit="sendMessage(event)">#}
+{#                            <div class="input-box">#}
+{#                                <input#}
+{#                                    type="text"#}
+{#                                    id="messageInput"#}
+{#                                    placeholder="Ask me anything about the palace..."#}
+{#                                    autocomplete="off"#}
+{#                                    maxlength="500"#}
+{#                                    class="message-input"#}
+{#                                />#}
+{#                                <button type="submit" class="btn-send" id="sendButton">#}
+{#                                    <i class="fas fa-arrow-right"></i>#}
+{#                                </button>#}
+{#                            </div>#}
+{#                        </form>#}
+{#                    </div>#}
+
+
+                </div>
+        </template>
+        <template id="chat-input-template">
+            <div class="input-section">
+{#                onsubmit="sendMessage(event)"#}
+                <form id="chatForm" >
+                    <div class="input-box">
+                        <input
+                                type="text"
+                                id="messageInput"
+                                placeholder="Ask me anything about the palace..."
+                                autocomplete="off"
+                                maxlength="500"
+                                class="message-input"
+                        />
+                        <button type="submit" class="btn-send" id="sendButton">
+                            <i class="fas fa-arrow-right"></i>
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </template>
+        <template id="default-message-template">
+            <div class="message assistant-message">
+                <div class="message-content">
+                    <p class="message-title">Welcome to Your Private Tour</p>
+                    <p>I'm your personal guide to the Palace of Culture. Select a room from the sidebar to explore, or ask me anything about the palace—from Moldavian culture to architecture, food recommendations, and accessibility information.</p>
+                    <div class="welcome-tips">
+                        <p><strong>Getting Started:</strong> Click any room in the sidebar, or type your question below.</p>
                     </div>
                 </div>
-            </main>
-        </div>
-    </div>
-
-    <!-- TOAST NOTIFICATIONS -->
-    <div class="toast" id="toast"></div>
-
-    <script src="{{ url_for('static', filename='js/data.js') }}?v=1.1"></script>
-    <script src="{{ url_for('static', filename='js/main.js') }}?v=1.1"></script>
+            </div>
+        </template>
+        <template id="user-message-template">
+            <div class="message user-message">
+                <div class="message-content"></div>
+            </div>
+        </template>
+        <template id="assistant-message-template">
+            <div class="message assistant-message">
+                <div class="message-content"></div>
+            </div>
+        </template>
+        {#        </T E M P L A T E U R I>          #}
+    <script type="module" src="{{ url_for('static', filename='js/main.js') }}?v=1.1"></script>
 </body>
 </html>

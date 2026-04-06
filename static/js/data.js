@@ -5,59 +5,48 @@
 let palaceData = null;
 let allRooms = [];
 
-async function loadPalaceData() {
+export async function loadPalaceData() {
     try {
         const timestamp = Date.now();
-        // Try primary endpoint first
         let response = await fetch(`/api/palace-data?t=${timestamp}`, {
             method: 'GET',
             cache: 'no-store'
         });
-        
-        // If primary endpoint fails, try fallback
         if (!response.ok) {
-            console.warn('Primary endpoint failed, trying fallback...');
             response = await fetch(`/palace_data.json?t=${timestamp}`, {
                 method: 'GET',
                 cache: 'no-store'
             });
         }
-        
         if (!response.ok) {
-            throw new Error(`Failed to load palace data (status: ${response.status})`);
+            throw new Error(`Failed to load palace data`);
         }
-        
         palaceData = await response.json();
-        
-        // Extract all rooms from all floors
         allRooms = [];
-        if (palaceData.floors && Array.isArray(palaceData.floors)) {
-            palaceData.floors.forEach(floor => {
+
+        const floors = palaceData.floors || palaceData.palace_info?.floors;
+
+        if (floors && Array.isArray(floors)) {
+            allRooms = [];
+            floors.forEach(floor => {
                 if (floor.rooms && Array.isArray(floor.rooms)) {
                     allRooms.push(...floor.rooms);
                 }
             });
         }
-        
-        console.log('✓ Palace data loaded successfully');
-        console.log('✓ Total rooms:', allRooms.length);
-        allRooms.forEach(room => {
-            console.log(`  - ${room.name} (Floor: ${room.floor})`);
-        });
-        
-        return true;
+        console.log("✓ rooms loaded:", allRooms.length);
+        return { palaceData, allRooms };
     } catch (error) {
-        console.error('✗ Error loading palace data:', error);
-        return false;
+        console.error(error);
+        return null;
     }
 }
-
-function getRoomsByType(type) {
+export function getRoomsByType(type) {
     if (type === 'all') return allRooms;
     return allRooms.filter(room => room.type === type);
 }
 
-function searchRooms(query) {
+export function searchRooms(query) {
     const lowerQuery = query.toLowerCase();
     return allRooms.filter(room => 
         room.name.toLowerCase().includes(lowerQuery) ||
@@ -65,25 +54,6 @@ function searchRooms(query) {
     );
 }
 
-function getRoomById(id) {
-    return allRooms.find(room => room.id === id);
-}
-
-
-function getRoomsByType(type) {
-    if (type === 'all') return allRooms;
-    return allRooms.filter(room => room.type === type);
-}
-
-function searchRooms(query) {
-    const lowerQuery = query.toLowerCase();
-    return allRooms.filter(room => 
-        room.name.toLowerCase().includes(lowerQuery) ||
-        room.description.toLowerCase().includes(lowerQuery) ||
-        (room.type && room.type.toLowerCase().includes(lowerQuery))
-    );
-}
-
-function getRoomById(id) {
+export function getRoomById(id) {
     return allRooms.find(room => room.id === id);
 }
