@@ -5,6 +5,7 @@ export class DefaultMessage extends HTMLElement {
             console.error("Welcome template missing");
             return;
         }
+        this.innerHTML = "";
         const clone = template.content.cloneNode(true);
         this.appendChild(clone);
     }

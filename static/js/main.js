@@ -236,9 +236,10 @@ function escapeHtml(text) {
     return div.innerHTML;
 }
 function showToast(message, type = 'info') {
-    elements.toast.textContent = message;
-    elements.toast.className = `toast show ${type}`;
-    setTimeout(() => elements.toast.classList.remove('show'), 3000);
+    let toast  = document.getElementById("toast");
+    toast.textContent = message;
+    toast.className = `toast show ${type}`;
+    setTimeout(() => toast.classList.remove('show'), 3000);
 }
 const style = document.createElement('style');
 style.textContent = `
