@@ -1,0 +1,26 @@
+.room-item {
+    position: relative;
+    overflow: hidden;
+    background: linear-gradient(
+        rgba(232, 226, 219, 0.9),
+        rgba(232, 226, 219, 0.9)
+    );
+}
+
+.room-item::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+
+    background: url("../images/muzeul-de-istorie.jpg") center/cover no-repeat;
+
+    opacity: 0.25;
+
+    filter: blur(2px);
+
+    z-index: 0;
+}
+.room-item > * {
+    position: relative;
+    z-index: 1;
+}

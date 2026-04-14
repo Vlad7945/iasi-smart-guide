@@ -20,7 +20,8 @@ import '/static/js/components/chatarea/ChatInput.js';
 import '/static/js/components/sidebar/SidebarSearch.js';
 import '/static/js/components/sidebar/SidebarFilter.js';
 import '/static/js/components/sidebar/RoomItem.js';
-
+import '/static/js/components/sidebar/CloseSidebarButton.js';
+import '/static/js/util/open_close_sidebar.js';
 let conversation = [];
 let isLoading = false;
 let currentRoom = null;
@@ -156,11 +157,11 @@ function buildRoomInfoMessage(room) {
 }
 
 function getMuseumDataForRoom(room) {
-    if (!palaceData || !palaceData.palace_info || !palaceData.palace_info.museums || !Array.isArray(palaceData.palace_info.museums.list)) {
+    if (!palaceData || !palaceData.palace_info || !palaceData.palace_info.museums || !Array.isArray(palaceData.palace_info.museums.roomsSlot)) {
         return null;
     }
 
-    const museums = palaceData.palace_info.museums.list;
+    const museums = palaceData.palace_info.museums.roomsSlot;
     const roomName = normalizeText(room.name || '');
     const roomId = normalizeText(room.id || '');
 

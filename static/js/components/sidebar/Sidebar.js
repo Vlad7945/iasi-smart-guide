@@ -5,20 +5,22 @@ export class Sidebar extends HTMLElement {
         const originalChildren = Array.from(this.children);
         this.innerHTML = "";
         this.appendChild(clone);
-        const section = this.querySelector(".sidebar-section");
+
+        const searchFilterSlot = this.querySelector(".search-filter-slot");
         originalChildren.forEach(child => {
-            section.appendChild(child);
+            searchFilterSlot.appendChild(child);
         });
+
         // state
         this.rooms = [];
         this.filter = "all";
         this.search = "";
-        this.list = this.querySelector(".rooms-list");
+        this.roomsSlot = this.querySelector(".rooms-slot");
+        //
         this.addEventListener("search-change", (e) => {
             this.search = e.detail;
             this.update();
         });
-
         this.addEventListener("filter-change", (e) => {
             this.filter = e.detail;
             this.update();
@@ -44,14 +46,14 @@ export class Sidebar extends HTMLElement {
             .includes(this.search.toLowerCase());
     }
     renderRooms(rooms) {
-        this.list.innerHTML = "";
+        this.roomsSlot.innerHTML = "";
         rooms.forEach(room => {
             const item = document.createElement("room-item");
             item.setAttribute("id", room.id);
             item.setAttribute("name", room.name);
             item.setAttribute("type", room.type);
             item.setAttribute("floor", room.floor);
-            this.list.appendChild(item);
+            this.roomsSlot.appendChild(item);
         });
     }
     update() {

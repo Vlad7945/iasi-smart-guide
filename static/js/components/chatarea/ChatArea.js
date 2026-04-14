@@ -11,14 +11,16 @@ export class ChatArea extends HTMLElement {
         this.innerHTML = "";
         this.appendChild(clone);
         this.messagesSlot = this.querySelector(".messages-slot");
-        this.inputSlot = this.querySelector(".input-slot");
+        this.inputArea = this.querySelector(".input-area");
         originalChildren.forEach(child => {
             if (child.tagName === "CHAT-INPUT"){
-                this.inputSlot.appendChild(child);
+                this.appendChild(child);
             } else {
                 this.messagesSlot.appendChild(child);
             }
         });
+
+
     }
     scrollToBottom() {
         this.messagesSlot.scrollTop = this.messagesSlot.scrollHeight;

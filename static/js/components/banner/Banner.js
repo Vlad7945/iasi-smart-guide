@@ -16,7 +16,7 @@ export class Banner extends HTMLElement {
         if (subtitle) {
             clone.querySelector(".logo-subtitle").textContent = subtitle;
         }
-        const actionsContainer = clone.querySelector(".header-actions");
+        const actionButtonsSlot = clone.querySelector(".action-btns-slot");
         const menuSlot = clone.querySelector(".menu-slot");
         const children = Array.from(this.children); // REAL elements
 
@@ -24,7 +24,7 @@ export class Banner extends HTMLElement {
             if (child.tagName === "TOGGLE-MENU-BUTTON") {
                 menuSlot.appendChild(child);
             } else {
-                actionsContainer.appendChild(child);
+                actionButtonsSlot.appendChild(child);
             }
         });
         this.innerHTML = "";

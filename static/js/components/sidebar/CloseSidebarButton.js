@@ -1,7 +1,7 @@
 import {open_close_sidebar} from "../../util/open_close_sidebar.js"
-export class ToggleMenuButton extends HTMLElement {
-    connectedCallback() {
-        const template = document.getElementById("toggle-menu-template");
+export class CloseSidebarButton extends HTMLElement{
+    connectedCallback(){
+        const template = document.getElementById("close-sidebar-button-template");
         if (!template) {
             console.error("Toggle menu template missing");
             return;
@@ -9,9 +9,6 @@ export class ToggleMenuButton extends HTMLElement {
         const clone = template.content.cloneNode(true);
         this.appendChild(clone);
         const btn = this.querySelector('button');
-        const sidebar = document.querySelector("sidebar-element");
-
-
         if (btn) {
             btn.addEventListener('click', () => {
                 open_close_sidebar();
@@ -19,5 +16,4 @@ export class ToggleMenuButton extends HTMLElement {
         }
     }
 }
-
-customElements.define("toggle-menu-button", ToggleMenuButton);
+customElements.define("close-sidebar-button", CloseSidebarButton);
