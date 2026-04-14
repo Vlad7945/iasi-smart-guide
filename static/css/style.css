@@ -356,7 +356,7 @@ sidebar-search{
 sidebar-filter{
     display:grid;
     grid-row: 3;
-    grid-column: 1 / 6;
+    grid-column: 1 / 23;
     grid-template-columns: auto;
     @media(max-width: 768px)
     {
@@ -367,25 +367,30 @@ sidebar-filter{
 }
 .filter-tab-slot{
     display: flex;
-    gap: var(--spacing-xs);
+    gap: 0.4rem;
     border-bottom: 1px solid var(--border-light);
-    overflow-x: scroll;
-    overflow-y: scroll;
-    justify-content: space-evenly;
+    overflow-x: hidden;
+    overflow-y: hidden;
+    justify-content: flex-start;
+    flex-wrap: nowrap;
+    align-content: flex-start;
+    height: fit-content;
+    padding: 0.3rem 0.5rem;
+    width: 100%;
 }
 .filter-tab {
-    min-height: clamp(1.8rem, 3vh, 2.6rem);
+    min-height: 1.6rem;
     border: 1px solid var(--border-light);
     background: transparent;
     color: var(--text-secondary);
     border-radius: 16px;
     cursor: pointer;
-    font-size: 0.8rem;
-    font-weight: 500;
+    font-size: 0.68rem;
+    font-weight: 600;
     white-space: nowrap;
     transition: all 0.2s ease;
     flex-shrink: 0;
-    padding: 0 clamp(0.7rem, 1vw, 1rem);
+    padding: 0.15rem 0.6rem;
 }
 .filter-tab:hover {
     background: var(--bg-light);
